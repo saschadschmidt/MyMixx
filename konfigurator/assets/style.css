@@ -1,0 +1,175 @@
+:root{
+    --clr-main: #9abf11;
+    --clr-scnd: #222222;
+    --clr-thrd: #F2F2F2;
+    --clr-bg: #fff;
+
+    --border-radius: 15px;
+
+    --maxwidth: 1000px;
+
+    font-family: 'Noto Sans', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--clr-bg);
+    gap: 30px;
+    min-height: 100dvh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: var(--maxwidth);
+}
+
+header{
+    background-color: var(--clr-main);
+    width: 100%;
+    padding: 30px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+main{
+    width: 100%;
+}
+
+.app{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
+.app-item{
+    box-sizing: border-box;
+    width: calc(100% / 5 - 120px / 4);
+    min-width: 150px;
+    background-color: var(--clr-thrd);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    flex: 1;
+    border: 2px solid var(--clr-thrd);
+    border: 2px solid #ccc; /* Standard Border-Farbe */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.app-item:hover{
+    border: 2px solid var(--clr-main);
+}
+
+.app-item:has(button:active){
+    border: 2px solid var(--clr-scnd);
+}
+
+button{
+    width: 100%;
+    text-align: center;
+    background-color: var(--clr-main) ;/* Standard Button-Farbe */
+    color: var(--clr-bg);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.added {
+    background-color: var(--clr-scnd);
+    color: white;
+}
+
+button.added:hover {
+    background-color: red;
+}
+
+.add-to-cart-btn {
+    background-color: var(--clr-main); /* Standard Button-Farbe */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:disabled {
+    background-color: var(--clr-scnd);
+    color: white;
+    cursor: not-allowed;
+}
+
+.app-item.added {
+    border-color: var(--clr-scnd);
+}
+
+.warenkorb-container{
+    margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    background-color: var(--clr-thrd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 30px -15px rgba(0,0,0,0.25);
+
+    & .warenkorb{
+        max-width: var(--maxwidth);
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        & button{
+            width: auto;
+            padding: 6px 24px;
+        }
+
+        & .warenkorb__zusammenfassung{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+
+            & .gesamt{
+                font-size: 24px;
+            }
+
+            & .versand{
+                font-size: 10px;
+                padding-top: 2px;
+
+                & a{
+                    color: var(--clr-main);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

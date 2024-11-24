@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Item 1",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 1.00
+    },
+    {
+        "name": "Item 2",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 1.50
+    },
+    {
+        "name": "Item 3",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 2.00
+    }
+]
