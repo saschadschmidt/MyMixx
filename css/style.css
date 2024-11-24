@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Noto_regu';
+    src: url(../fonts/NotoSans-VariableFont_wdth\,wght.ttf);
+  }
+
+@font-face {
+    font-family: 'Noto_ital';
+    src: url(../fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf);
+  }
+
+
+:root {
+    --mymixx_1: #f2bb16;
+    --mymixx_2: #d9580d;
+    --mymixx_3: #9abf11;
+    --mymixx_4: #22ddf2;
+    --text_color: darkslategrey;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    height: 100vh;
+    font-size: 17px;
+}
+
+body {
+    color: var(--text_color);
+    box-sizing: content-box;
+    font-family: 'Noto_regu', sans-serif;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--mymixx_4);
+}
+
+nav ul {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul li {
+    width: 7rem;
+    padding: 0.8rem;
+    margin-right: 1rem;
+    height: 4rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    text-align: center;
+    transition: height 0.8s ease;
+    z-index: 1;
+}
+
+nav ul li:last-of-type {
+    margin-right: 0;
+}
+
+nav ul li:hover {
+    height: 7rem;
+}
+
+nav ul li.prod {
+    background-color: var(--mymixx_1);
+}
+
+nav ul li.uns {
+    background-color: var(--mymixx_2);
+}
+
+nav ul li.stor {
+    background-color: var(--mymixx_3);
+}
+
+nav ul li.nach {
+    background-color: var(--mymixx_4);
+}
+
+nav ul li.kon {
+    background-color: var(--mymixx_1);
+}
+
+nav ul a {
+    color: rgb(235, 248, 248);
+    font-weight: 700;
+}
+
+header {
+    min-height: 25rem;
+    background: transparent url('../img/headerbild_mymixx.jpg') no-repeat;
+    background-position:center center;
+    background-size: cover;
+}
+
+header h1 {
+    display: none;
+}
+
+header figure {
+    width: 40%;
+    margin-left: 2rem;
+    padding-top: 3rem;
+    z-index: 1000;
+}
+
+header figure img {
+    width: 100%;
+}
+
+div#contentwrap {
+    width: 80%;
+    max-width: 75rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+}
+
+
+
+main h2, aside h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+main p, aside p {
+    margin-bottom: 0.5rem;
+    text-indent: 1rem;
+}
+
+main p.claim {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Noto_ital', sans-serif;
+    text-indent: 0;
+}
+
+aside {
+    width: 100%;
+}
+
+aside figure {
+    width: 100%;
+}
+
+aside figure img {
+    width: 100%;
+}
+
+footer {
+    min-height: 10rem;
+    background-color: var(--mymixx_3);
+    margin-top: 2rem;
+}
+
+#footwrap {
+    width: 80%;
+    max-width: 75rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+footer section {
+    margin-top: 2rem;
+}
+footer section ul li a {
+    color: var(--text_color);
+    font-size: 0.8rem;
+}
+
+footer section#siegel ul, footer section#socmed ul  {
+    display: grid;
+    grid-template-columns: 2rem 2rem 2rem;
+    grid-template-rows: 2rem 2rem 2rem;
+    gap: 2rem;
+}
+
+footer section ul li a img:hover {
+    cursor: grab;
+}
+
+footer section ul li a img {
+    width: 300%;
+    padding-top: 1rem;
+}
+
+a.btn-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--mymixx_3);
+    color: rgb(235, 248, 248);
+    padding: 0.5rem 1rem .6rem;
+    border: 2px solid var(--mymixx_3);
+    border-radius: 50px;
+    width: auto;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+        gap: 30px;
+        border: 2px solid var(--mymixx_3);
+        color: var(--text_color);
+        background-color: transparent;
+        
+        & svg{
+            stroke: var(--text_color);
+        }
+    }
+
+    & svg{
+        width: 1rem;
+        height: 1rem;
+    }
+}
