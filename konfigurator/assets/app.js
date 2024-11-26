@@ -18,8 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button type="button" class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.pricePer10g}, this)">Hinzufügen</button>
                 `;
                 appContainer.appendChild(appItem);
+
+                // Überprüfen, ob das Produkt bereits im Warenkorb ist
+                const existingItem = cart.find(cartItem => cartItem.name === item.name);
+                if (existingItem) {
+                    const button = appItem.querySelector('.add-to-cart-btn');
+                    button.textContent = 'Hinzugefügt';
+                    button.style.backgroundColor = 'black';
+                    button.style.color = 'white';
+                    appItem.style.borderColor = 'black';
+
+                    button.onmouseover = () => {
+                        button.textContent = 'Entfernen';
+                    };
+                    button.onmouseout = () => {
+                        button.textContent = 'Hinzugefügt';
+                    };
+                    button.onclick = () => {
+                        removeFromCart(item.name, button);
+                    };
+                }
             });
         });
+
+    updateCartSummary();
 });
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -52,7 +74,7 @@ function addToCart(name, pricePer10g, button) {
         button.textContent = 'Entfernen';
     };
     button.onmouseout = () => {
-        button.textContent = 'Hinzugefügt';
+        button.textContent = 'Im Warenkorb';
     };
     button.onclick = () => {
         removeFromCart(name, button);
@@ -69,6 +91,8 @@ function removeFromCart(name, button) {
     button.style.backgroundColor = '';
     button.style.color = '';
     button.closest('.app-item').style.borderColor = '';
+    button.onmouseover = null;
+    button.onmouseout = null;
     button.onclick = () => addToCart(name, parseFloat(button.closest('.app-item').querySelector('.price').textContent), button);
 }
 

@@ -89,6 +89,14 @@ main{
     border: 2px solid var(--clr-scnd);
 }
 
+.app-item img{
+    max-width: 100%;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
 button{
     width: 100%;
     text-align: center;
@@ -114,6 +122,7 @@ button.added:hover {
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 100px;
 }
 
 .add-to-cart-btn:disabled {
