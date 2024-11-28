@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,31 +10,44 @@
 <body>
 
     <header class="wrapper">
-        <a href="">
-            <img src="https://via.placeholder.com/62x30" alt="Zurück zur Startseite">
+        <a href="..">
+            <img src="/img/logo_mymixx_2024.png" style="filter: grayscale(100%) brightness(0); max-height: 40px;" alt="Zurück zur Startseite">
         </a>
     </header>
 
-
-
-
     <main class="wrapper">
-
-        
-        
-    </main>
-
-    <div class="warenkorb-container">
-        <div class="warenkorb">
-            <div class="warenkorb__zusammenfassung">
-                <span class="gesamt">10,84€</span>
-                <p class="versand">inkl. MwSt. <br>zzgl. <a href="#">Versand</a></p>
+        <div class="warenkorb-page-container">
+            <div class="warenkorb-page">
+                <h2>Ihr Warenkorb</h2>
+                <div class="warenkorb-items-page"></div>
+                <div class="warenkorb__zusammenfassung-page">
+                    <span>Gesamt:</span><span class="gesamt">Gesamt: 0,00€</span>
+                </div>
             </div>
 
-            <button class="cta">Zur Kasse</button>
+            <div class="nutzer-daten-page">
+                <h2>Ihre Daten</h2>
+                <form id="bestellformular">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
+
+                    <label for="email">E-Mail*</label>
+                    <input type="email" id="email" name="email" placeholder="m.mustermann@email.com" required>
+
+                    <label for="telefon">Telefonnummer</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="+491234567890">
+
+                    <label for="datum">Abholung*</label>
+                    <input type="date" id="datum" name="datum" required>
+                    
+                    <select id="uhrzeit" name="uhrzeit" required>
+                    </select>
+
+                    <button type="submit">Kostenpflichtig bestellen</button>
+                </form>
+            </div>
         </div>
-    </div>
-    
+    </main>
 
     <!-- Script -->
     <script src="assets/app.js"></script>

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </select>
                     </form>
                     <span class="price">${item.pricePer10g.toFixed(2)}€</span>
-                    <button type="button" class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.pricePer10g}, this)">Hinzufügen</button>
+                    <button type="button" class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.pricePer10g}, this)">In den Warenkorb</button>
                 `;
                 appContainer.appendChild(appItem);
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const existingItem = cart.find(cartItem => cartItem.name === item.name);
                 if (existingItem) {
                     const button = appItem.querySelector('.add-to-cart-btn');
-                    button.textContent = 'Hinzugefügt';
+                    button.textContent = 'Im Warenkorb';
                     button.style.backgroundColor = 'black';
                     button.style.color = 'white';
                     appItem.style.borderColor = 'black';
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         button.textContent = 'Entfernen';
                     };
                     button.onmouseout = () => {
-                        button.textContent = 'Hinzugefügt';
+                        button.textContent = 'Im Warenkorb';
                     };
                     button.onclick = () => {
                         removeFromCart(item.name, button);
@@ -42,6 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     updateCartSummary();
+
+    // Set the minimum date for the date input to today
+    const dateInput = document.getElementById('datum');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    // Populate the time slots in 15-minute intervals
+    const timeSelect = document.getElementById('uhrzeit');
+    populateTimeSlots(timeSelect);
+
+    // Update time slots based on selected date
+    dateInput.addEventListener('change', () => {
+        const selectedDate = new Date(dateInput.value);
+        const now = new Date();
+        const isToday = selectedDate.toDateString() === now.toDateString();
+
+        populateTimeSlots(timeSelect, isToday ? now : null);
+    });
 });
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -64,7 +82,7 @@ function addToCart(name, pricePer10g, button) {
     updateCartSummary();
 
     // Ändern des Button-Textes und des Stylings
-    button.textContent = 'Hinzugefügt';
+    button.textContent = 'Im Warenkorb';
     button.style.backgroundColor = 'black';
     button.style.color = 'white';
     button.closest('.app-item').style.borderColor = 'black';
@@ -87,7 +105,7 @@ function removeFromCart(name, button) {
     updateCartSummary();
 
     // Zurücksetzen des Button-Textes und des Stylings
-    button.textContent = 'Hinzufügen';
+    button.textContent = 'In den Warenkorb';
     button.style.backgroundColor = '';
     button.style.color = '';
     button.closest('.app-item').style.borderColor = '';
@@ -97,13 +115,30 @@ function removeFromCart(name, button) {
 }
 
 function updateCartSummary() {
+    const warenkorbItemsContainer = document.querySelector('.warenkorb-items-page');
     let gesamtPreis = 0;
 
-    cart.forEach(item => {
-        gesamtPreis += parseFloat(item.price);
-    });
+    if (warenkorbItemsContainer) {
+        warenkorbItemsContainer.innerHTML = '';
 
-    gesamtElement.textContent = `Gesamt: ${gesamtPreis.toFixed(2)}€`;
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('warenkorb-item-page');
+            itemElement.innerHTML = `
+                <span class="warenkorb-item-page__itemname">${item.name}</span>
+                <span class="warenkorb-item-page__itemqty">${item.quantity}g</span>
+                <span class="warenkorb-item-page__itemprice">${item.price}€</span>
+            `;
+            warenkorbItemsContainer.appendChild(itemElement);
+            gesamtPreis += parseFloat(item.price);
+        });
+    } else {
+        cart.forEach(item => {
+            gesamtPreis += parseFloat(item.price);
+        });
+    }
+
+    gesamtElement.textContent = `${gesamtPreis.toFixed(2)}€`;
 }
 
 document.querySelector('.cta').addEventListener('click', () => {
@@ -115,8 +150,77 @@ updateCartSummary();
 
 function checkout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const email = "example@example.com"; // Hier die Ziel-E-Mail-Adresse einfügen
+    let email;
 
     const emailBody = cart.map(item => `${item.name}: ${item.quantity}g - ${item.price}€`).join('\n');
-    window.location.href = `mailto:${email}?subject=Warenkorb Bestellung&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = `mailto:${email}?subject=MyMixx Bestellung&body=${encodeURIComponent(emailBody)}`;
+}
+
+function populateTimeSlots(timeSelect, now = null) {
+    timeSelect.innerHTML = '';
+    const currentHours = now ? now.getHours() : 0;
+    const currentMinutes = now ? now.getMinutes() : 0;
+    const currentTimeSlot = now ? Math.ceil(currentMinutes / 15) : 0;
+
+    for (let i = 0; i < 24 * 4; i++) {
+        const hours = Math.floor(i / 4);
+        const minutes = (i % 4) * 15;
+        const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        const option = document.createElement('option');
+        option.value = time;
+        option.textContent = time;
+
+        // Disable past time slots for today
+        if (now && (hours < currentHours || (hours === currentHours && minutes <= currentTimeSlot * 15))) {
+            option.disabled = true;
+        }
+
+        timeSelect.appendChild(option);
+    }
+}
+
+// Warenkorb-Items laden
+const warenkorbItemsContainer = document.querySelector('.warenkorb-items-page');
+if (warenkorbItemsContainer) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let gesamtPreis = 0;
+
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('warenkorb-item-page');
+        itemElement.innerHTML = `
+            <span class="warenkorb-item-page__itemname">${item.name}</span>
+            <span class="warenkorb-item-page__itemqty">${item.quantity}g</span>
+            <span class="warenkorb-item-page__itemprice">${item.price}€</span>
+        `;
+        warenkorbItemsContainer.appendChild(itemElement);
+        gesamtPreis += parseFloat(item.price);
+    });
+
+    document.querySelector('.gesamt').textContent = `Gesamt: ${gesamtPreis.toFixed(2)}€`;
+}
+
+// Formular-Validierung und Bestellungs-Handling
+const bestellformular = document.getElementById('bestellformular');
+if (bestellformular) {
+    bestellformular.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const datum = document.getElementById('datum').value;
+        const uhrzeit = document.getElementById('uhrzeit').value;
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart.length === 0) {
+            alert('Ihr Warenkorb ist leer.');
+            return;
+        }
+
+        const emailBody = cart.map(item => `${item.name}: ${item.quantity}g - ${item.price}€`).join('\n');
+        const emailContent = `mailto:${email}?subject=MyMixx Bestellung&body=${encodeURIComponent(emailBody + `\n\nName: ${name}\nDatum: ${datum}\nUhrzeit: ${uhrzeit}`)}`;
+
+        window.location.href = emailContent;
+        window.location.href = 'bestaetigung.html';
+    });
 }

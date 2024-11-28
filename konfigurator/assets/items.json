@@ -1,17 +1,352 @@
 [
     {
-        "name": "Item 1",
+        "name": "Zarte Haferflocken",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 1.00
+        "pricePer10g": 0.05
     },
     {
-        "name": "Item 2",
+        "name": "Großblättrige Haferflocken",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 1.50
+        "pricePer10g": 0.05
     },
     {
-        "name": "Item 3",
+        "name": "Dinkelflocken",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 2.00
+        "pricePer10g": 0.08
+    },
+    {
+        "name": "Quinoaflocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.15
+    },
+    {
+        "name": "Buchweizen&shy;flocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.14
+    },
+    {
+        "name": "Hirseflocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Vollkorn-Reisflocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Gerstenflocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.08
+    },
+    {
+        "name": "Maisgrieß (Polenta)",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.06
+    },
+    {
+        "name": "Haferschrot",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.07
+    },
+    {
+        "name": "Gersten- und Roggenschrot",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.08
+    },
+    {
+        "name": "Amaranth-Pops",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.20
+    },
+    {
+        "name": "Cornflakes",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.12
+    },
+    {
+        "name": "Crunchy Müsli",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Rice Krispies",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Weizenkleie",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Geröstete Haferflakes",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.11
+    },
+    {
+        "name": "Müsliriegel&shy;stückchen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.23
+    },
+    {
+        "name": "Cranberries",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.20
+    },
+    {
+        "name": "Rosinen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.12
+    },
+    {
+        "name": "Goji-Beeren",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.43
+    },
+    {
+        "name": "Mangostückchen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.33
+    },
+    {
+        "name": "Ananasstücke",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.30
+    },
+    {
+        "name": "Apfelringe",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.35
+    },
+    {
+        "name": "Bananenchips",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.14
+    },
+    {
+        "name": "Datteln",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.21
+    },
+    {
+        "name": "Feigen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.23
+    },
+    {
+        "name": "Erdbeerscheiben",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.60
+    },
+    {
+        "name": "Heidelbeeren",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.37
+    },
+    {
+        "name": "Kirschen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.33
+    },
+    {
+        "name": "Aprikosen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.20
+    },
+    {
+        "name": "Mandeln",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.27
+    },
+    {
+        "name": "Walnüsse",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.30
+    },
+    {
+        "name": "Haselnüsse",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.28
+    },
+    {
+        "name": "Pistazien",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.55
+    },
+    {
+        "name": "Cashewkerne",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.32
+    },
+    {
+        "name": "Pekanüsse",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.33
+    },
+    {
+        "name": "Sonnenblumen&shy;kerne",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Kürbiskerne",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.23
+    },
+    {
+        "name": "Chiasamen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.35
+    },
+    {
+        "name": "Leinsamen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.13
+    },
+    {
+        "name": "Hanfsamen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.40
+    },
+    {
+        "name": "Sesamsamen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.14
+    },
+    {
+        "name": "Kakaonibs",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.45
+    },
+    {
+        "name": "Matcha-Pulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 1.60
+    },
+    {
+        "name": "Maca-Pulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.55
+    },
+    {
+        "name": "Baobab-Pulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.60
+    },
+    {
+        "name": "Spirulina",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 1.40
+    },
+    {
+        "name": "Acai-Beeren",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.85
+    },
+    {
+        "name": "Lucuma-Pulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.50
+    },
+    {
+        "name": "Weizengras&shy;pulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.65
+    },
+    {
+        "name": "Gojipulver",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.75
+    },
+    {
+        "name": "Kokosflocken",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.23
+    },
+    {
+        "name": "Trockene Maulbeeren",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.37
+    },
+    {
+        "name": "Dunkle Schokoladen&shy;stücke",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.25
+    },
+    {
+        "name": "Weiße Schokoladen&shy;stücke",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.25
+    },
+    {
+        "name": "Karamell&shy;stückchen",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.27
+    },
+    {
+        "name": "Kokoschips",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.23
+    },
+    {
+        "name": "Honig",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.24
+    },
+    {
+        "name": "Ahornsirup",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.32
+    },
+    {
+        "name": "Agavendicksaft",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.18
+    },
+    {
+        "name": "Hafermilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Mandelmilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Kokosmilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Sojamilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Reismilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Vollmilch",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Joghurt (natur, griechisch)",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.04
+    },
+    {
+        "name": "Wasser (sehr weich und mikrofiltriert)",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
+    },
+    {
+        "name": "Kokoswasser",
+        "imageUrl": "https://via.placeholder.com/88x88",
+        "pricePer10g": 0.02
     }
 ]

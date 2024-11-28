@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Noto_regu';
+    src: url(../../fonts/NotoSans-VariableFont_wdth\,wght.ttf);
+  }
+
+@font-face {
+    font-family: 'Noto_ital';
+    src: url(../../fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf);
+  }
+
 :root{
     --clr-main: #9abf11;
     --clr-scnd: #222222;
@@ -8,7 +18,7 @@
 
     --maxwidth: 1000px;
 
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto_regu', sans-serif;
 }
 
 *{
@@ -53,12 +63,13 @@ main{
 
 .app{
     height: auto;
+    align-items: stretch;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
     min-height: 100dvh;
 }
@@ -72,13 +83,15 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
     gap: 10px;
     flex: 1;
     border: 2px solid var(--clr-thrd);
-    border: 2px solid #ccc; /* Standard Border-Farbe */
+    border: 2px solid var(--clr-thrd); /* Standard Border-Farbe */
     padding: 10px;
-    margin-bottom: 10px;
+    /* height: 100%; */
+    height: 100%;
 }
 
 .app-item:hover{
@@ -95,6 +108,12 @@ main{
     width: auto;
     height: auto;
     border-radius: var(--border-radius);
+}
+
+.app-item h2{
+    font-size: 18px;
+    text-align: center;
+    word-break: break-word;
 }
 
 button{
@@ -181,4 +200,98 @@ button.added:hover {
             }
         }
     }
+}
+
+.warenkorb-page-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+
+    & > * {
+        width: calc(100% - 30px / 2);
+    }
+}
+
+.warenkorb-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--clr-thrd);
+}
+
+.nutzer-daten-page {
+    flex: 1;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--clr-thrd);
+}
+
+.warenkorb-items-page {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.warenkorb-items-page span.warenkorb-item-page__itemname {
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.warenkorb-item-page {
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.warenkorb__zusammenfassung-page {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+form {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form label {
+    font-weight: 600;
+    width: 100%;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border-radius: 0px;
+    border: none;
+    background-color: none;
+    border-bottom: 1px solid var(--clr-scnd);
+    width: 100%;
+}
+
+form button{
+    border-radius: 100px;
+}
+
+form input::placeholder{
+    color: rgba(0,0,0,0.25);
+}
+
+form input[name=datum] , form select[name=uhrzeit] {
+    width: calc(100% / 2 - 15px / 2);
+}
+
+form button {
+    background-color: var(--clr-main);
+    color: var(--clr-bg);
+    cursor: pointer;
+    border: none;
 }
