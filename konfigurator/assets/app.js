@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('/konfigurator/assets/items.json')
         .then(response => response.json())
         .then(data => {
-            const appContainer = document.querySelector('.app');
+            const appContainer = document.querySelector('.konfigurator');
             data.forEach(item => {
                 const appItem = document.createElement('div');
-                appItem.classList.add('app-item');
+                appItem.classList.add('item');
                 appItem.innerHTML = `
                     <img src="${item.imageUrl}" alt="${item.name}">
                     <h2>${item.name}</h2>
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </select>
                     </form>
                     <span class="price">${item.pricePer10g.toFixed(2)}€</span>
-                    <button type="button" class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.pricePer10g}, this)">In den Warenkorb</button>
+                    <button type="button" class="add-to-cart-btn" onclick="addToCart('${item.name}', ${item.pricePer10g}, this)"><span class="inline-icon icon-warenkorb"></span>In den Warenkorb</button>
                 `;
                 appContainer.appendChild(appItem);
 
@@ -23,16 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const existingItem = cart.find(cartItem => cartItem.name === item.name);
                 if (existingItem) {
                     const button = appItem.querySelector('.add-to-cart-btn');
-                    button.textContent = 'Im Warenkorb';
+                    button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
                     button.style.backgroundColor = 'black';
                     button.style.color = 'white';
                     appItem.style.borderColor = 'black';
 
                     button.onmouseover = () => {
-                        button.textContent = 'Entfernen';
+                        button.innerHTML = '<span class="inline-icon icon-trash"></span>Entfernen';
                     };
                     button.onmouseout = () => {
-                        button.textContent = 'Im Warenkorb';
+                        button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
                     };
                     button.onclick = () => {
                         removeFromCart(item.name, button);
@@ -60,13 +60,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
         populateTimeSlots(timeSelect, isToday ? now : null);
     });
+
+    // Formular-Validierung und Bestellungs-Handling
+    const bestellformular = document.getElementById('bestellformular');
+    if (bestellformular) {
+        bestellformular.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const datum = document.getElementById('datum').value;
+            const uhrzeit = document.getElementById('uhrzeit').value;
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length >= 1) {
+                const orderData = {
+                    name: name,
+                    email: email,
+                    datum: datum,
+                    uhrzeit: uhrzeit,
+                    cart: cart
+                };
+
+                fetch('/api/order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    window.location.href = 'bestaetigung.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            } else {
+                alert('Ihr Warenkorb ist leer!');
+            }
+        });
+    }
 });
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const gesamtElement = document.querySelector('.gesamt');
 
 function addToCart(name, pricePer10g, button) {
-    const quantitySelect = button.closest('.app-item').querySelector('.quantity-select');
+    const quantitySelect = button.closest('.item').querySelector('.quantity-select');
     const quantity = parseInt(quantitySelect.value);
     const price = (pricePer10g * (quantity / 10)).toFixed(2);
 
@@ -82,17 +124,17 @@ function addToCart(name, pricePer10g, button) {
     updateCartSummary();
 
     // Ändern des Button-Textes und des Stylings
-    button.textContent = 'Im Warenkorb';
+    button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
     button.style.backgroundColor = 'black';
     button.style.color = 'white';
-    button.closest('.app-item').style.borderColor = 'black';
+    button.closest('.item').style.borderColor = 'black';
 
     // Hinzufügen von Hover-Effekt und Entfernen-Funktion
     button.onmouseover = () => {
-        button.textContent = 'Entfernen';
+        button.innerHTML = '<span class="inline-icon icon-trash"></span>Entfernen';
     };
     button.onmouseout = () => {
-        button.textContent = 'Im Warenkorb';
+        button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
     };
     button.onclick = () => {
         removeFromCart(name, button);
@@ -105,13 +147,13 @@ function removeFromCart(name, button) {
     updateCartSummary();
 
     // Zurücksetzen des Button-Textes und des Stylings
-    button.textContent = 'In den Warenkorb';
+    button.innerHTML = '<span class="inline-icon icon-warenkorb"></span>In den Warenkorb';
     button.style.backgroundColor = '';
     button.style.color = '';
-    button.closest('.app-item').style.borderColor = '';
+    button.closest('.item').style.borderColor = '';
     button.onmouseover = null;
     button.onmouseout = null;
-    button.onclick = () => addToCart(name, parseFloat(button.closest('.app-item').querySelector('.price').textContent), button);
+    button.onclick = () => addToCart(name, parseFloat(button.closest('.item').querySelector('.price').textContent), button);
 }
 
 function updateCartSummary() {
@@ -141,8 +183,8 @@ function updateCartSummary() {
     gesamtElement.textContent = `${gesamtPreis.toFixed(2)}€`;
 }
 
-document.querySelector('.cta').addEventListener('click', () => {
-    window.location.href = 'warenkorb.html';
+document.querySelector('.cta-weiter').addEventListener('click', () => {
+    window.location.href = '/konfigurator/warenkorb.html';
 });
 
 // Initial update of the cart summary
@@ -153,7 +195,6 @@ function checkout() {
     let email;
 
     const emailBody = cart.map(item => `${item.name}: ${item.quantity}g - ${item.price}€`).join('\n');
-    window.location.href = `mailto:${email}?subject=MyMixx Bestellung&body=${encodeURIComponent(emailBody)}`;
 }
 
 function populateTimeSlots(timeSelect, now = null) {
@@ -198,29 +239,4 @@ if (warenkorbItemsContainer) {
     });
 
     document.querySelector('.gesamt').textContent = `Gesamt: ${gesamtPreis.toFixed(2)}€`;
-}
-
-// Formular-Validierung und Bestellungs-Handling
-const bestellformular = document.getElementById('bestellformular');
-if (bestellformular) {
-    bestellformular.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const datum = document.getElementById('datum').value;
-        const uhrzeit = document.getElementById('uhrzeit').value;
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        if (cart.length === 0) {
-            alert('Ihr Warenkorb ist leer.');
-            return;
-        }
-
-        const emailBody = cart.map(item => `${item.name}: ${item.quantity}g - ${item.price}€`).join('\n');
-        const emailContent = `mailto:${email}?subject=MyMixx Bestellung&body=${encodeURIComponent(emailBody + `\n\nName: ${name}\nDatum: ${datum}\nUhrzeit: ${uhrzeit}`)}`;
-
-        window.location.href = emailContent;
-        window.location.href = 'bestaetigung.html';
-    });
 }
