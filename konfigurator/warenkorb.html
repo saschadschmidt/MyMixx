@@ -29,21 +29,21 @@
                 <h2>Ihre Daten</h2>
                 <form id="bestellformular">
                     <label for="name">Name*</label>
-                    <input type="text" id="name" name="name" placeholder="Max Mustermann" >
+                    <input type="text" id="name" name="name" placeholder="Max Mustermann" required>
 
                     <label for="email">E-Mail*</label>
-                    <input type="email" id="email" name="email" placeholder="m.mustermann@email.com" >
+                    <input type="email" id="email" name="email" placeholder="m.mustermann@email.com" required>
 
                     <label for="telefon">Telefonnummer</label>
                     <input type="tel" id="telefon" name="telefon" placeholder="+491234567890">
 
                     <label for="datum">Abholung*</label>
-                    <input type="date" id="datum" name="datum" >
+                    <input type="date" id="datum" name="datum" required>
                     
-                    <select id="uhrzeit" name="uhrzeit" >
+                    <select id="uhrzeit" name="uhrzeit" required>
                     </select>
 
-                    <button type="submit">Kostenpflichtig bestellen</button>
+                    <button type="submit"><span class="inline-icon icon-check"></span>Kostenpflichtig bestellen</button>
                 </form>
             </div>
         </div>

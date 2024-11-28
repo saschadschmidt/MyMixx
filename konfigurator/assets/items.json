@@ -297,56 +297,56 @@
     {
         "name": "Ahornsirup",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.32
+        "pricePer50ml": 1.60
     },
     {
         "name": "Agavendicksaft",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.18
+        "pricePer50ml": 0.90
     },
     {
         "name": "Hafermilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.09
     },
     {
         "name": "Mandelmilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.11
     },
     {
         "name": "Kokosmilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.11
     },
     {
         "name": "Sojamilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.09
     },
     {
         "name": "Reismilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.09
     },
     {
         "name": "Vollmilch",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.08
     },
     {
         "name": "Joghurt (natur, griechisch)",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.04
+        "pricePer50ml": 0.19
     },
     {
         "name": "Wasser (sehr weich und mikrofiltriert)",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.09
     },
     {
         "name": "Kokoswasser",
         "imageUrl": "https://via.placeholder.com/88x88",
-        "pricePer10g": 0.02
+        "pricePer50ml": 0.13
     }
 ]
