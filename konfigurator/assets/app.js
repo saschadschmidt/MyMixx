@@ -149,9 +149,9 @@ function removeFromCart(name, button) {
 
 function updateButtonToInCart(button, name, pricePerUnit, unit) {
     button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
-    button.style.backgroundColor = 'black';
+    button.style.backgroundColor = 'var(--clr-scnd)';
     button.style.color = 'white';
-    button.closest('.item').style.borderColor = 'black';
+    button.closest('.item').style.borderColor = 'var(--clr-scnd)';
 
     // Hinzufügen von Hover-Effekt und Entfernen-Funktion
     button.onmouseover = () => {
