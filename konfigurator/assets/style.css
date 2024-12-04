@@ -18,27 +18,19 @@
 	--clr-scnd: #222222;
 	--clr-thrd: #F2F2F2;
 	--clr-bg: #fff;
-
 	--border-radius: 15px;
-
 	--maxwidth: 1000px;
-
-	font-family: 'Noto_regu', sans-serif;
 }
 
 * {
+	font-family: 'Noto_regu', sans-serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 }
@@ -99,71 +91,57 @@ main {
 	flex: 1;
 	border: 2px solid var(--clr-thrd);
 	padding: 10px;
-}
 
-.item:hover {
-	border: 2px solid var(--clr-main);
-}
+	&:hover{
+		border: 2px solid var(--clr-main);
+	}
 
-.item:has(button:active) {
-	border: 2px solid var(--clr-scnd);
-}
+	& img{
+		max-width: 100%;
+		max-height: 250px;
+		width: auto;
+		height: auto;
+		border-radius: var(--border-radius);
+	}
+	& h2{
+		font-size: 18px;
+		text-align: center;
+		word-break: break-word;
+	}
 
-.item img {
-	max-width: 100%;
-	max-height: 250px;
-	width: auto;
-	height: auto;
-	border-radius: var(--border-radius);
-}
-
-.item h2 {
-	font-size: 18px;
-	text-align: center;
-	word-break: break-word;
+	&.added {
+		border-color: var(--clr-scnd);
+	}
 }
 
 button {
 	width: 100%;
 	text-align: center;
 	background-color: var(--clr-main);
-	/* Standard Button-Farbe */
 	color: var(--clr-bg);
 	border: none;
 	padding: 10px;
 	cursor: pointer;
 }
 
-button.added {
-	background-color: var(--clr-scnd);
-	color: white;
-}
-
-button.added:hover {
-	background-color: red;
-}
-
 .add-to-cart-btn {
 	background-color: var(--clr-main);
-	/* Standard Button-Farbe */
 	color: white;
 	border: none;
 	padding: 10px;
 	cursor: pointer;
 	border-radius: 100px;
-}
 
-.add-to-cart-btn:disabled {
-	background-color: var(--clr-scnd);
-	color: white;
-	cursor: not-allowed;
-}
-
-.item.added {
-	border-color: var(--clr-scnd);
+	&:disabled {
+		background-color: var(--clr-scnd);
+		color: white;
+		cursor: not-allowed;
+	}
+	
 }
 
 .warenkorb-container {
+	min-height: 50px;
 	margin-top: auto;
 	position: sticky;
 	bottom: 0;
@@ -181,12 +159,13 @@ button.added:hover {
 
 		display: flex;
 		flex-direction: row;
+		align-items: stretch;
 		justify-content: space-between;
 		padding: 0 10px;
 
 		& button {
 			width: auto;
-			padding: 6px 24px;
+			padding: 12px 24px;
 		}
 
 		& .warenkorb__zusammenfassung {
@@ -245,11 +224,12 @@ button.added:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-}
 
-.warenkorb-items-page span.warenkorb-item-page__itemname {
-	font-weight: 600;
-	flex-grow: 1;
+	& span.warenkorb-item-page__itemname {
+		font-weight: 600;
+		flex-grow: 1;
+	}
+	
 }
 
 .warenkorb-item-page {
@@ -375,9 +355,48 @@ form button {
 
 .cta {
 	background-color: var(--clr-main);
-    color: white;
+    color: var(--clr-bg);
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 100px;
+}
+
+.cta-back{
+	background-color: var(--clr-scnd);
+	color:  var(--clr-bg);
+	border: 1px solid var(--clr-scnd);
+
+	&:hover{
+		background-color: var(--clr-bg);
+		color:  var(--clr-scnd);
+		border-color: var(--clr-scnd);
+
+	}
+}
+
+.bestellungs-details{
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+}
+
+.personalData , .orderData {
+	width: calc(100% / 2 - 15px);
+	padding: 20px;
+	border-radius: 15px;
+	color: var(--clr-scnd);
+	background-color: var(--clr-thrd);
+
+	& ul{
+		list-style-type: none;
+		padding: 0;
+	}
+}
+
+.gesamtPreis{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

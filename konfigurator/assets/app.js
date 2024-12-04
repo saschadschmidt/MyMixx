@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/konfigurator/assets/items.json')
+    fetch('assets/items.json')
         .then(response => response.json())
         .then(data => {
             const appContainer = document.querySelector('.konfigurator');
@@ -86,6 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     uhrzeit: uhrzeit,
                     cart: cart
                 };
+
+                // Speichern der Bestelldaten im LocalStorage
+                localStorage.setItem('orderData', JSON.stringify(orderData));
 
                 /*fetch('/api/order', {
                     method: 'POST',
@@ -227,7 +230,7 @@ function updateCartSummary() {
 document.querySelector('.cta-weiter').addEventListener('click', () => {
     const gesamtPreis = parseFloat(gesamtElement.textContent.replace('€', ''));
     if (gesamtPreis >= 5) {
-        window.location.href = '/konfigurator/warenkorb.html';
+        window.location.href = '../konfigurator/warenkorb.html';
     } else {
         alert('Der Mindestbestellwert von 5€ wurde nicht erreicht.');
     }

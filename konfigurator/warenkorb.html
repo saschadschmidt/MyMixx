@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMixx Müsli-Konfigurator</title>
 
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../konfigurator/assets/style.css">
 </head>
 <body>
 
     <header class="wrapper">
         <a href="..">
-            <img src="/img/logo_mymixx_2024.png" style="filter: grayscale(100%) brightness(0); max-height: 40px;" alt="Zurück zur Startseite">
+            <img src="../img/logo_mymixx_2024.png" style="filter: grayscale(100%) brightness(0); max-height: 40px;" alt="Zurück zur Startseite">
         </a>
     </header>
 
@@ -47,10 +47,15 @@
                 </form>
             </div>
         </div>
-        <button class="cta" onclick="window.location.href = 'index.html'; return false;">Zurück zur Übersicht</button>
     </main>
 
+    <div class="warenkorb-container" style="min-height: 52.5px;">
+        <div class="warenkorb">
+            <button class="cta cta-back" onclick="window.location.href = 'index.html'; return false;">Zurück zur Übersicht</button>
+        </div>
+    </div>
+
     <!-- Script -->
-    <script src="assets/app.js"></script>
+    <script src="../konfigurator/assets/app.js"></script>
 </body>
 </html>
