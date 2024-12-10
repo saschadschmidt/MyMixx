@@ -78,8 +78,8 @@ main {
 
 .item {
 	box-sizing: border-box;
-	width: calc(100% / 5 - 120px / 4);
-	min-width: 150px;
+	width: calc(100% / 4 - 90px / 3);
+	min-width: 200px;
 	background-color: var(--clr-thrd);
 	border-radius: var(--border-radius);
 	display: flex;

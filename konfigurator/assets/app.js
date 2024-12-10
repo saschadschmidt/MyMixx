@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 appContainer.appendChild(appItem);
 
+                // Event-Listener für die Mengenänderung hinzufügen
+                const quantitySelect = appItem.querySelector('.quantity-select');
+                quantitySelect.addEventListener('change', () => {
+                    updatePrice(quantitySelect, item.pricePer10g || item.pricePer50ml, unit, appItem.querySelector('.price'));
+                });
+
                 // Überprüfen, ob das Produkt bereits im Warenkorb ist
                 const existingItem = cart.find(cartItem => cartItem.name === item.name);
                 if (existingItem) {
@@ -184,6 +190,12 @@ function updateButtonToAdd(button, name) {
         const unit = button.dataset.unit;
         addToCart(name, pricePerUnit, unit, button);
     };
+}
+
+function updatePrice(quantitySelect, pricePerUnit, unit, priceElement) {
+    const quantity = parseInt(quantitySelect.value);
+    const price = (pricePerUnit * (unit === 'g' ? quantity / 10 : quantity / 50)).toFixed(2);
+    priceElement.textContent = `${price}€`;
 }
 
 function updateCartSummary() {
