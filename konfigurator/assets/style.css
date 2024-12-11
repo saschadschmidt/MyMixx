@@ -391,12 +391,22 @@ form button {
 
 	& ul{
 		list-style-type: none;
-		padding: 0;
+		padding: 15px 0;
 	}
 }
 
 .gesamtPreis{
+	padding-top: 15px;
 	display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.item-container{
+	padding: 15px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 30px;
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
 }

@@ -204,7 +204,7 @@ a.btn-cta{
     gap: 15px;
     background-color: var(--mymixx_3);
     color: rgb(235, 248, 248);
-    padding: 0.5rem 1rem .6rem;
+    padding: 12px 24px 13px;
     border: 2px solid var(--mymixx_3);
     border-radius: 50px;
     width: auto;
@@ -225,5 +225,52 @@ a.btn-cta{
     & svg{
         width: 1rem;
         height: 1rem;
+    }
+}
+
+.call-to-action{
+    margin-top: 30px;
+    overflow: clip;
+    background-color: rgba(0,0,0,.05);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-height: 300px;
+    justify-content: center;
+    flex-direction: row-reverse;
+
+    & > *{
+        width: calc(100% / 2 - 15px);
+    }
+
+    & .cta-content{
+        padding: 30px;
+        gap: 15px;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+    & img{
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .call-to-action{
+        flex-direction: column;
+        gap: 30px;
+        max-height: unset;
+
+        & > *{
+            width: auto;
+            max-width: 100%;
+        }
+
+        & .cta-content{
+            max-width: 100%;
+            width: auto;
+        }
     }
 }
