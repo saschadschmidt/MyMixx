@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 appItem.innerHTML = `
-                    <img src="${item.imageUrl}" alt="${item.name}">
                     <h2>${item.name}</h2>
                     <form>
                         <select name="quantity" class="quantity-select">
@@ -96,22 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Speichern der Bestelldaten im LocalStorage
                 localStorage.setItem('orderData', JSON.stringify(orderData));
 
-                /*fetch('/api/order', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(orderData)
-                })
                 
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    window.location.href = 'bestaetigung.html';
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });*/
                 console.log("Order Data: ", orderData);
                 setTimeout(() => {
                     window.location.href = 'bestaetigung.html';
