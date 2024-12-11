@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         // Löschen der Bestelldaten und des Warenkorbs aus dem LocalStorage
-        /* localStorage.removeItem('orderData');
-        localStorage.removeItem('cart'); */
+        localStorage.removeItem('orderData');
+        localStorage.removeItem('cart');
     }
 });
