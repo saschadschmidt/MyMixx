@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Daten aus der items.json Datei laden
     fetch('assets/items.json')
         .then(response => response.json())
         .then(data => {
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let priceLabel = '';
                 let unit = '';
 
+                // Optionen und Preise für die Artikel festlegen
                 if (item.pricePer10g !== undefined) {
                     options = Array.from({ length: 15 }, (_, i) => `<option value="${(i + 1) * 10}">${(i + 1) * 10}g</option>`).join('');
                     priceLabel = `${item.pricePer10g.toFixed(2)}€`;
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     unit = 'ml';
                 }
 
+                // HTML für jeden Artikel erstellen
                 appItem.innerHTML = `
                     <h2>${item.name}</h2>
                     <form>
@@ -49,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartSummary();
 
-    // Set the minimum date for the date input to today
+    // Mindestdatum für das Datumseingabefeld auf heute setzen
     const dateInput = document.getElementById('datum');
     if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
 
-        // Update time slots based on selected date
+        // Zeitfenster basierend auf dem ausgewählten Datum aktualisieren
         dateInput.addEventListener('change', () => {
             const selectedDate = new Date(dateInput.value);
             const now = new Date();
@@ -65,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Populate the time slots in 15-minute intervals
+    // Zeitfenster in 15-Minuten-Intervallen füllen
     const timeSelect = document.getElementById('uhrzeit');
     if (timeSelect) {
         populateTimeSlots(timeSelect);
@@ -95,11 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Speichern der Bestelldaten im LocalStorage
                 localStorage.setItem('orderData', JSON.stringify(orderData));
 
-                
-                console.log("Order Data: ", orderData);
-                setTimeout(() => {
-                    window.location.href = 'bestaetigung.html';
-                }, 2000);
+                // Weiterleitung zur Bestätigungsseite
+                window.location.href = 'bestaetigung.html';
             } else {
                 alert('Ihr Warenkorb ist leer!');
             }
@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const gesamtElement = document.querySelector('.gesamt');
 
+// Funktion zum Hinzufügen eines Artikels zum Warenkorb
 function addToCart(name, pricePerUnit, unit, button) {
     const quantitySelect = button.closest('.item').querySelector('.quantity-select');
     const quantity = parseInt(quantitySelect.value);
@@ -131,6 +132,7 @@ function addToCart(name, pricePerUnit, unit, button) {
     updateButtonToInCart(button, name, pricePerUnit, unit);
 }
 
+// Funktion zum Entfernen eines Artikels aus dem Warenkorb
 function removeFromCart(name, button) {
     cart = cart.filter(item => item.name !== name);
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -140,11 +142,12 @@ function removeFromCart(name, button) {
     updateButtonToAdd(button, name);
 }
 
+// Funktion zum Aktualisieren des Buttons, wenn ein Artikel im Warenkorb ist
 function updateButtonToInCart(button, name, pricePerUnit, unit) {
     button.innerHTML = '<span class="inline-icon icon-check"></span>Im Warenkorb';
-    button.style.backgroundColor = 'var(--clr-scnd)';
+    button.style.backgroundColor = 'black';
     button.style.color = 'white';
-    button.closest('.item').style.borderColor = 'var(--clr-scnd)';
+    button.closest('.item').style.borderColor = 'black';
 
     // Hinzufügen von Hover-Effekt und Entfernen-Funktion
     button.onmouseover = () => {
@@ -162,6 +165,7 @@ function updateButtonToInCart(button, name, pricePerUnit, unit) {
     button.dataset.unit = unit;
 }
 
+// Funktion zum Zurücksetzen des Buttons, wenn ein Artikel aus dem Warenkorb entfernt wurde
 function updateButtonToAdd(button, name) {
     button.innerHTML = '<span class="inline-icon icon-warenkorb"></span>In den Warenkorb';
     button.style.backgroundColor = '';
@@ -176,12 +180,14 @@ function updateButtonToAdd(button, name) {
     };
 }
 
+// Funktion zum Aktualisieren des Preises basierend auf der ausgewählten Menge
 function updatePrice(quantitySelect, pricePerUnit, unit, priceElement) {
     const quantity = parseInt(quantitySelect.value);
     const price = (pricePerUnit * (unit === 'g' ? quantity / 10 : quantity / 50)).toFixed(2);
     priceElement.textContent = `${price}€`;
 }
 
+// Funktion zum Aktualisieren der Warenkorb-Zusammenfassung
 function updateCartSummary() {
     const warenkorbItemsContainer = document.querySelector('.warenkorb-items-page');
     let gesamtPreis = 0;
@@ -223,10 +229,11 @@ function updateCartSummary() {
     }
 }
 
+// Event-Listener für den "Weiter zur Kasse" Button
 document.querySelector('.cta-weiter').addEventListener('click', () => {
     const gesamtPreis = parseFloat(gesamtElement.textContent.replace('€', ''));
     if (gesamtPreis >= 5) {
-        window.location.href = '../konfigurator/warenkorb.html';
+        window.location.href = 'warenkorb.html';
     } else {
         alert('Der Mindestbestellwert von 5€ wurde nicht erreicht.');
     }
