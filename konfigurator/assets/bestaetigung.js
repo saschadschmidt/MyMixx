@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const orderData = JSON.parse(localStorage.getItem('orderData'));
-    if (orderData) {
+    if (orderData && orderData.cart.length > 0) {
         const bestellungsItemsContainer = document.getElementById('bestellungs-items');
         const bestellungsDatenContainer = document.getElementById('bestellungs-daten');
 
@@ -24,8 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <li class="item-container"><strong>Uhrzeit:</strong> ${orderData.uhrzeit} Uhr</li>
         `;
 
-        // Löschen der Bestelldaten und des Warenkorbs aus dem LocalStorage
+        // Löschen der Bestelldaten und des Warenkorbs aus dem LocalStorage || auskommentieren falls dies nicht gewünscht ist wie in DOKUMENTATION.md beschrieben.
         localStorage.removeItem('orderData');
         localStorage.removeItem('cart');
+    } else {
+        // Weiterleitung zur Startseite, wenn der Warenkorb leer ist
+        window.location.href = 'index.html';
     }
 });
