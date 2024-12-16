@@ -87,7 +87,7 @@
     {
         "name": "Müsliriegel&shy;stückchen",
         "pricePer10g": 0.23,
-        "image": "./assets/img/Müsliriegelstückchen.png"
+        "image": "./assets/img/Müsliriegel­stückchen.png"
     },
     {
         "name": "Cranberries",
@@ -107,246 +107,246 @@
     {
         "name": "Mangostückchen",
         "pricePer10g": 0.33,
-        "image": "img/mangostueckchen.jpg"
+        "image": "./assets/img/Mangostückchen.png"
     },
     {
         "name": "Ananasstücke",
         "pricePer10g": 0.30,
-        "image": "img/ananasstuecke.jpg"
+        "image": "./assets/img/Ananasstücke.png"
     },
     {
         "name": "Apfelringe",
         "pricePer10g": 0.35,
-        "image": "img/apfelringe.jpg"
+        "image": "./assets/img/Apfelringe.png"
     },
     {
         "name": "Bananenchips",
         "pricePer10g": 0.14,
-        "image": "img/bananenchips.jpg"
+        "image": "./assets/img/Bananenchips.png"
     },
     {
         "name": "Datteln",
         "pricePer10g": 0.21,
-        "image": "img/datteln.jpg"
+        "image": "./assets/img/Datteln.png"
     },
     {
         "name": "Feigen",
         "pricePer10g": 0.23,
-        "image": "img/feigen.jpg"
+        "image": "./assets/img/Feigen.png"
     },
     {
         "name": "Erdbeerscheiben",
         "pricePer10g": 0.60,
-        "image": "img/erdbeerscheiben.jpg"
+        "image": "./assets/img/Erdbeerscheiben.png"
     },
     {
         "name": "Heidelbeeren",
         "pricePer10g": 0.37,
-        "image": "img/heidelbeeren.jpg"
+        "image": "./assets/img/Heidelbeeren.png"
     },
     {
         "name": "Kirschen",
         "pricePer10g": 0.33,
-        "image": "img/kirschen.jpg"
+        "image": "./assets/img/Kirschen.png"
     },
     {
         "name": "Aprikosen",
         "pricePer10g": 0.20,
-        "image": "img/aprikosen.jpg"
+        "image": "./assets/img/Aprikosen.png"
     },
     {
         "name": "Mandeln",
         "pricePer10g": 0.27,
-        "image": "img/mandeln.jpg"
+        "image": "./assets/img/Mandeln.png"
     },
     {
         "name": "Walnüsse",
         "pricePer10g": 0.30,
-        "image": "img/walnuesse.jpg"
+        "image": "./assets/img/Walnüsse.png"
     },
     {
         "name": "Haselnüsse",
         "pricePer10g": 0.28,
-        "image": "img/haselnuesse.jpg"
+        "image": "./assets/img/Haselnüsse.png"
     },
     {
         "name": "Pistazien",
         "pricePer10g": 0.55,
-        "image": "img/pistazien.jpg"
+        "image": "./assets/img/Pistazien.png"
     },
     {
         "name": "Cashewkerne",
         "pricePer10g": 0.32,
-        "image": "img/cashewkerne.jpg"
+        "image": "./assets/img/Cashewkerne.png"
     },
     {
         "name": "Pekanüsse",
         "pricePer10g": 0.33,
-        "image": "img/pekanuesse.jpg"
+        "image": "./assets/img/Pekanüsse.png"
     },
     {
         "name": "Sonnenblumen&shy;kerne",
         "pricePer10g": 0.13,
-        "image": "img/sonnenblumenkerne.jpg"
+        "image": "./assets/img/Sonnenblumenkerne.png"
     },
     {
         "name": "Kürbiskerne",
         "pricePer10g": 0.23,
-        "image": "img/kuerbiskerne.jpg"
+        "image": "./assets/img/Kürbiskerne.png"
     },
     {
         "name": "Chiasamen",
         "pricePer10g": 0.35,
-        "image": "img/chiasamen.jpg"
+        "image": "./assets/img/Chiasamen.png"
     },
     {
         "name": "Leinsamen",
         "pricePer10g": 0.13,
-        "image": "img/leinsamen.jpg"
+        "image": "./assets/img/Leinsamen.png"
     },
     {
         "name": "Hanfsamen",
         "pricePer10g": 0.40,
-        "image": "img/hanfsamen.jpg"
+        "image": "./assets/img/Hanfsamen.png"
     },
     {
         "name": "Sesamsamen",
         "pricePer10g": 0.14,
-        "image": "img/sesamsamen.jpg"
+        "image": "./assets/img/Sesamsamen.png"
     },
     {
         "name": "Kakaonibs",
         "pricePer10g": 0.45,
-        "image": "img/kakaonibs.jpg"
+        "image": "./assets/img/Kakaonibs.png"
     },
     {
         "name": "Matcha-Pulver",
         "pricePer10g": 1.60,
-        "image": "img/matcha_pulver.jpg"
+        "image": "./assets/img/Matcha-Pulver.png"
     },
     {
         "name": "Maca-Pulver",
         "pricePer10g": 0.55,
-        "image": "img/maca_pulver.jpg"
+        "image": "./assets/img/Maca-Pulver.png"
     },
     {
         "name": "Baobab-Pulver",
         "pricePer10g": 0.60,
-        "image": "img/baobab_pulver.jpg"
+        "image": "./assets/img/Baobab-Pulver.png"
     },
     {
         "name": "Spirulina",
         "pricePer10g": 1.40,
-        "image": "img/spirulina.jpg"
+        "image": "./assets/img/Spirulina.png"
     },
     {
         "name": "Acai-Beeren",
         "pricePer10g": 0.85,
-        "image": "img/acai_beeren.jpg"
+        "image": "./assets/img/Acai-Beeren.png"
     },
     {
         "name": "Lucuma-Pulver",
         "pricePer10g": 0.50,
-        "image": "img/lucuma_pulver.jpg"
+        "image": "./assets/img/Lucuma-Pulver.png"
     },
     {
         "name": "Weizengras&shy;pulver",
         "pricePer10g": 0.65,
-        "image": "img/weizengraspulver.jpg"
+        "image": "./assets/img/Weizengras­pulver.png"
     },
     {
         "name": "Gojipulver",
         "pricePer10g": 0.75,
-        "image": "img/gojipulver.jpg"
+        "image": "./assets/img/Gojipulver.png"
     },
     {
         "name": "Kokosflocken",
         "pricePer10g": 0.23,
-        "image": "img/kokosflocken.jpg"
+        "image": "./assets/img/Kokosflocken.png"
     },
     {
         "name": "Trockene Maulbeeren",
         "pricePer10g": 0.37,
-        "image": "img/trockene_maulbeeren.jpg"
+        "image": "./assets/img/Trockene Maulbeeren.png"
     },
     {
         "name": "Dunkle Schokoladen&shy;stücke",
         "pricePer10g": 0.25,
-        "image": "img/dunkle_schokoladenstuecke.jpg"
+        "image": "./assets/img/Dunkle Schokoladen­stücke.png"
     },
     {
         "name": "Weiße Schokoladen&shy;stücke",
         "pricePer10g": 0.25,
-        "image": "img/weisse_schokoladenstuecke.jpg"
+        "image": "./assets/img/Weiße Schokoladen­stücke.png"
     },
     {
         "name": "Karamell&shy;stückchen",
         "pricePer10g": 0.27,
-        "image": "img/karamellstueckchen.jpg"
+        "image": "./assets/img/Karamell­stückchen.png"
     },
     {
         "name": "Kokoschips",
         "pricePer10g": 0.23,
-        "image": "img/kokoschips.jpg"
+        "image": "./assets/img/Kokoschips.png"
     },
     {
         "name": "Honig",
         "pricePer10g": 0.24,
-        "image": "img/honig.jpg"
+        "image": "./assets/img/Honig.png"
     },
     {
         "name": "Ahornsirup",
         "pricePer50ml": 1.60,
-        "image": "img/ahornsirup.jpg"
+        "image": "./assets/img/Ahornsirup.png"
     },
     {
         "name": "Agavendicksaft",
         "pricePer50ml": 0.90,
-        "image": "img/agavendicksaft.jpg"
+        "image": "./assets/img/Agavendicksaft.png"
     },
     {
         "name": "Hafermilch",
         "pricePer50ml": 0.09,
-        "image": "img/hafermilch.jpg"
+        "image": "./assets/img/Hafermilch.png"
     },
     {
         "name": "Mandelmilch",
         "pricePer50ml": 0.11,
-        "image": "img/mandelmilch.jpg"
+        "image": "./assets/img/Mandelmilch.png"
     },
     {
         "name": "Kokosmilch",
         "pricePer50ml": 0.11,
-        "image": "img/kokosmilch.jpg"
+        "image": "./assets/img/Kokosmilch.png"
     },
     {
         "name": "Sojamilch",
         "pricePer50ml": 0.09,
-        "image": "img/sojamilch.jpg"
+        "image": "./assets/img/Sojamilch.png"
     },
     {
         "name": "Reismilch",
         "pricePer50ml": 0.09,
-        "image": "img/reismilch.jpg"
+        "image": "./assets/img/Reismilch.png"
     },
     {
         "name": "Vollmilch",
         "pricePer50ml": 0.08,
-        "image": "img/vollmilch.jpg"
+        "image": "./assets/img/Vollmilch.png"
     },
     {
         "name": "Joghurt (natur, griechisch)",
         "pricePer50ml": 0.19,
-        "image": "img/joghurt.jpg"
+        "image": "./assets/img/Joghurt.png"
     },
     {
         "name": "Wasser (sehr weich und mikrofiltriert)",
         "pricePer50ml": 0.09,
-        "image": "img/wasser.jpg"
+        "image": "./assets/img/Wasser.png"
     },
     {
         "name": "Kokoswasser",
         "pricePer50ml": 0.13,
-        "image": "img/kokoswasser.jpg"
+        "image": "./assets/img/Kokoswasser.png"
     }
 ]
