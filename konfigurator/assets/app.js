@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // HTML für jeden Artikel erstellen
                 appItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
                     <h2>${item.name}</h2>
                     <form>
                         <select name="quantity" class="quantity-select">
