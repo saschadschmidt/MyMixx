@@ -5,7 +5,7 @@
         "image": "./assets/img/Zarte Haferflocken.png"
     },
     {
-        "name": "Großblättrige Haferflocken",
+        "name": "Grossblaettrige Haferflocken",
         "pricePer10g": 0.05,
         "image": "./assets/img/Grobe Haferflocken.png"
     },
@@ -40,7 +40,7 @@
         "image": "./assets/img/Gerstenflocken.png"
     },
     {
-        "name": "Maisgrieß (Polenta)",
+        "name": "Maisgriess (Polenta)",
         "pricePer10g": 0.06,
         "image": "./assets/img/Polenta.png"
     },
@@ -65,9 +65,9 @@
         "image": "./assets/img/Cornflakes.png"
     },
     {
-        "name": "Crunchy Müsli",
+        "name": "Crunchy Muesli",
         "pricePer10g": 0.13,
-        "image": "./assets/img/Crunchy Müsli.png"
+        "image": "./assets/img/Crunchy Muesli.png"
     },
     {
         "name": "Rice Krispies",
@@ -80,12 +80,12 @@
         "image": "./assets/img/Weizenkleie.png"
     },
     {
-        "name": "Geröstete Haferflakes",
+        "name": "Geroestete Haferflakes",
         "pricePer10g": 0.11,
-        "image": "./assets/img/Geröstete Haferflakes.png"
+        "image": "./assets/img/Geroestete Haferflakes.png"
     },
     {
-        "name": "Müsliriegel&shy;stückchen",
+        "name": "Muesliriegel&shy;stueckchen",
         "pricePer10g": 0.23,
         "image": "./assets/img/mueslistuecke.png"
     },
@@ -105,14 +105,14 @@
         "image": "./assets/img/Goji-Beeren.png"
     },
     {
-        "name": "Mangostückchen",
+        "name": "Mangostueckchen",
         "pricePer10g": 0.33,
-        "image": "./assets/img/Mangostückchen.png"
+        "image": "./assets/img/Mangostueckchen.png"
     },
     {
-        "name": "Ananasstücke",
+        "name": "Ananasstuecke",
         "pricePer10g": 0.30,
-        "image": "./assets/img/Ananasstücke.png"
+        "image": "./assets/img/Ananasstuecke.png"
     },
     {
         "name": "Apfelringe",
@@ -160,14 +160,14 @@
         "image": "./assets/img/Mandeln.png"
     },
     {
-        "name": "Walnüsse",
+        "name": "Walnuesse",
         "pricePer10g": 0.30,
-        "image": "./assets/img/Walnüsse.png"
+        "image": "./assets/img/Walnuesse.png"
     },
     {
-        "name": "Haselnüsse",
+        "name": "Haselnuesse",
         "pricePer10g": 0.28,
-        "image": "./assets/img/Haselnüsse.png"
+        "image": "./assets/img/Haselnuesse.png"
     },
     {
         "name": "Pistazien",
@@ -180,9 +180,9 @@
         "image": "./assets/img/Cashewkerne.png"
     },
     {
-        "name": "Pekanüsse",
+        "name": "Pekanuesse",
         "pricePer10g": 0.33,
-        "image": "./assets/img/Pekanüsse.png"
+        "image": "./assets/img/Pekanuesse.png"
     },
     {
         "name": "Sonnenblumen&shy;kerne",
@@ -190,9 +190,9 @@
         "image": "./assets/img/Sonnenblumenkerne.png"
     },
     {
-        "name": "Kürbiskerne",
+        "name": "Kuerbiskerne",
         "pricePer10g": 0.23,
-        "image": "./assets/img/Kürbiskerne.png"
+        "image": "./assets/img/Kuerbiskerne.png"
     },
     {
         "name": "Chiasamen",
@@ -270,19 +270,19 @@
         "image": "./assets/img/Trockene Maulbeeren.png"
     },
     {
-        "name": "Dunkle Schokoladen&shy;stücke",
+        "name": "Dunkle Schokoladen&shy;stuecke",
         "pricePer10g": 0.25,
-        "image": "./assets/img/Dunkle Schokoladen­stücke.png"
+        "image": "./assets/img/Dunkle Schokoladen­stuecke.png"
     },
     {
-        "name": "Weiße Schokoladen&shy;stücke",
+        "name": "Weisse Schokoladen&shy;stuecke",
         "pricePer10g": 0.25,
-        "image": "./assets/img/Weiße Schokoladen­stücke.png"
+        "image": "./assets/img/Weisse Schokoladen­stuecke.png"
     },
     {
-        "name": "Karamell&shy;stückchen",
+        "name": "Karamell&shy;stueckchen",
         "pricePer10g": 0.27,
-        "image": "./assets/img/Karamell­stückchen.png"
+        "image": "./assets/img/Karamell­stueckchen.png"
     },
     {
         "name": "Kokoschips",
